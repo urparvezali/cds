@@ -61,7 +61,6 @@ void solve() {
             return;
         }
     }
-
 }
 int main() {
     Faster;
