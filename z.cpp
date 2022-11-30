@@ -1,14 +1,26 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main() {
-  char c;
-  for (int i = 65; i <= 90; i++)
+int main()
+{
+  int n;
+  cin >> n;
+  int v[n][n];
+  for (int i = 0; i < n; i++)
   {
-    c=i;
-    cout<<c<<endl;
+    for (int j = 0; j < n; j++)
+    {
+      cin >> v[i][j];
+    }
   }
-  
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = 0; j < n; j++)
+    {
+      cout << v[i][j] << " ";
+    }
+    cout << endl;
+  }
   return 0;
 }
