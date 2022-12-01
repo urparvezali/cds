@@ -1,22 +1,18 @@
 // Parvez Ali, ICE-13 of PUST
 #include <bits/stdc++.h>
 using namespace std;
+
 typedef long long ll;
+typedef vector<int> vint;
+typedef vector<string> vstr;
+typedef vector<ll> vll;
 #define endl "\n"
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
-#define rfor(i,var) for(int i:var)
+
 int main(){
     IOS;
-    string s,ss;
-    cin>>s>>ss;
-    reverse(s.begin(),s.end());
-    if (s==ss)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-    {
-        cout<<"NO"<<endl;
-    }
+    ll a,b,c,d;
+    cin>>a>>b>>c>>d;
+    cout<<"Difference = "<<((a*b)-(c*d))<<endl;
     return 0;
 }
