@@ -8,25 +8,8 @@ typedef vector<string> vstr;
 typedef vector<ll> vll;
 #define endl "\n"
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
-
-int main(){
-    IOS;
-    vector<vint> v;
-    for (int i = 0; i < 5; i++)
-    {
-        vint temp;
-
-        for (int j = 0; j < 4; j++)
-        {
-            int x;
-            cin>>x;
-            temp.push_back(x);
-        }
-        v.push_back(temp);
-    }
-    
-
-    for (int i = 0; i < 5; i++)
+void vout(vector<vector<int>> &v){
+        for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 4; j++)
         {
@@ -34,6 +17,20 @@ int main(){
         }
         cout<<endl;
     }
-    
+}
+int main(){
+    IOS;
+    vector<vint> v;
+    for (int i = 0; i < 5; i++)
+    {
+        v.push_back(vint ());
+        for (int j = 0; j < 4; j++)
+        {
+            int x;
+            cin>>x;
+            v[i].push_back(x);
+        }
+    }
+    vout(v);
     return 0;
 }
