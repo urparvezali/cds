@@ -11,21 +11,27 @@ typedef vector<ll> vll;
 
 int main(){
     IOS;
+    vector<vint> v;
     for (int i = 0; i < 5; i++)
     {
-        for (int j = 0; j < 5-i-1; j++)
+        vint temp;
+
+        for (int j = 0; j < 4; j++)
         {
-            cout<<"  ";
+            int x;
+            cin>>x;
+            temp.push_back(x);
         }
-        for (int k = 0; k <(i*2)-1;  k++)
+        v.push_back(temp);
+    }
+    
+
+    for (int i = 0; i < 5; i++)
+    {
+        for (int j = 0; j < 4; j++)
         {
-            cout<<" *";
+            cout<<v[i][j]<<" ";
         }
-        for (int l = 0; l < 5-i-1; l++)
-        {
-            cout<<"  ";
-        }
-        
         cout<<endl;
     }
     
