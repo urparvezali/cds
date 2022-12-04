@@ -8,13 +8,21 @@ typedef vector<string> vstr;
 typedef vector<ll> vll;
 #define endl "\n"
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define mod (1e9+7)
 
 int main(){
     IOS;
-    ll num;
-    double b;
-    cin>>num>>b;
-    ll total = round(100*b);
-    cout<<fixed<<setprecision(0)<<total*num/100<<endl;
+    string a;
+    string b;
+    cin>>a; cin>>b;
+
+    for (int i = 0; i < b.length(); i++)
+    {
+        if (a[i]!=b[i])
+        {
+            cout<<i+1<<endl;
+            break;
+        }
+    }
     return 0;
 }
