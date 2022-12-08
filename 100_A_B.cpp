@@ -8,12 +8,12 @@ typedef vector<string> vstr;
 typedef vector<ll> vll;
 #define endl "\n"
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define mod (1e9+7)
 
 int main(){
     IOS;
-    ll a=1,b=2;
-    ll c=a/b;
-    cout<<c<<endl;
-    
+    int a,b;
+    cin>>a>>b;
+    cout<<a+b<<endl;
     return 0;
 }

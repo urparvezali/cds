@@ -8,12 +8,26 @@ typedef vector<string> vstr;
 typedef vector<ll> vll;
 #define endl "\n"
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define mod (1e9+7)
 
 int main(){
     IOS;
-    ll a=1,b=2;
-    ll c=a/b;
-    cout<<c<<endl;
+    int t;
+    cin>>t;
+    while (t--)
+    {
+        int a,b;
+        cin>>a>>b;
+        if (a==b)
+        {
+            cout<<"NEUTRAL"<<endl;
+        }
+        else if (a>b)
+        {
+            cout<<"LOSS"<<endl;
+        }
+        else cout<<"PROFIT"<<endl;
+    }
     
     return 0;
 }

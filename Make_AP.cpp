@@ -8,26 +8,30 @@ typedef vector<string> vstr;
 typedef vector<ll> vll;
 #define endl "\n"
 #define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
+#define mod (1e9+7)
 
 int main(){
     IOS;
-    int n, a, b, k = 0;
-    cin >> n;
-    int ar[n];
-    for (int i = 0; i < n; i++)
-        cin >> ar[i];
-
-    for (int i = 1; i <= n; i++)
+    int t;
+    cin>>t;
+    while (t--)
     {
-        for (int j = 0; j < n; j++)
+        int a,b,token=0;
+        cin>>a>>b;
+        for (int i = 1; i <= b; i++)
         {
-            if (ar[j] == i)
+            if (a-i==i-b)
             {
-                cout << j + 1 << " ";
+                cout<<i<<endl;
+                token++;
+                break;
             }
         }
+        if (token==0)
+        {
+            cout<<-1<<endl;
+        }
     }
-
     
     return 0;
 }
