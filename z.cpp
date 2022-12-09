@@ -1,3 +1,4 @@
+// Parvez Ali, ICE-13 of PUST
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,6 +11,7 @@ typedef vector<ll> vll;
 #define mod (1e9+7)
 
 int main(){
+    IOS;
     
     return 0;
 }

@@ -11,27 +11,32 @@ typedef vector<ll> vll;
 
 int main(){
     string s;
-    getline(cin,s);
+    cin>>s;
     stack <char> v;
-    for (int i = 0; i < s.size(); i++)
+    for (int i = s.size()-1; i >= 0; i--)
     {
         char c=s[i];
         v.push(c);
     }
-    int token =0;
+    int token1 =0,token2=0;
     for (int i = 0; i < s.size(); i++)
     {
         if (v.top()=='(')
         {
-            token++;
+            token1++;
         }
         else if(v.top()==')')
         {
-            token--;
+            token2++;
         }
         v.pop();
+
+        if (token2>token1)
+        {
+            break;
+        }
     }
-    if (token==0)
+    if (token1==token2)
     {
         cout<<"YES"<<endl;
     }
@@ -39,6 +44,5 @@ int main(){
     {
         cout<<"NO"<<endl;
     }
-    
     return 0;
 }
