@@ -1,7 +1,8 @@
 fn main() {
-    let age = 31;
-    let name = "Jack";
-  
-    // print the variable using println!
-    println!("Name = {1}, Age = {0}", name, age);
+    // create a floating-point variable
+    let decimal: f64 = 54957230309745930948570923398539875398.0;
+
+    // convert floating point type to integer type
+    let integer = decimal as i128;
+    println!("{}", integer);
 }
