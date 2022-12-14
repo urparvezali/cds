@@ -24,10 +24,8 @@ int main(){
             if (ar[j] == i)
             {
                 cout << j + 1 << " ";
-            }
+         }
         }
     }
-
-    
     return 0;
 }
