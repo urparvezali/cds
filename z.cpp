@@ -12,12 +12,9 @@ typedef vector<ll> vll;
 
 int main(){
     IOS;
-    vll v;
-    v.push_back(2345);
-    v.push_back(9824756);
-    v.push_back(23756);
-    v.push_back(382561);
-
-    cout<<""<<endl;
+    string s;
+    cin>>s;
+    revers(s.begin(),s.end());
+    cout<<s<<endl;
     return 0;
 }
