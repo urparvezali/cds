@@ -15,6 +15,14 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    
+    int k;
+    cin>>k;
+    string s;
+
+    for (int i = 0; i < k; i++)
+    {
+        s+='A'+i;
+    }
+    cout<<s<<endl;
     return 0;
 }
