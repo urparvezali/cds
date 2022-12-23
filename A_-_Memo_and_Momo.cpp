@@ -16,27 +16,20 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    int t;
-    cin>>t;
-    while (t--)
+    ll a,b,k;
+    cin>>a>>b>>k;
+    if (a%k==0&&b%k==0)
     {
-        float n;cin>>n;
-        if (n>=38)
-        {
-            n/=5;
-            if ((ceil(n)-n)<0.6)
-            {
-                cout<<5*round(n)<<endl;
-            }
-            else
-            {
-                cout<<round(5*n)<<endl;
-            }
-        }
-        else
-        {
-            cout<<n<<endl;
-        }
+        cout<<"Both"<<endl;
     }
+    else if (a%k==0)
+    {
+        cout<<"Memo"<<endl;
+    }
+    else if (b%k==0)
+    {
+        cout<<"Momo"<<endl;
+    }
+    else cout<<"No One"<<endl;
     return 0;
 }

@@ -16,27 +16,26 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    int t;
-    cin>>t;
-    while (t--)
+    string s; cin>>s;
+    set <char> sc;
+    for (int i = 0; i < s.length(); i++)
     {
-        float n;cin>>n;
-        if (n>=38)
-        {
-            n/=5;
-            if ((ceil(n)-n)<0.6)
-            {
-                cout<<5*round(n)<<endl;
-            }
-            else
-            {
-                cout<<round(5*n)<<endl;
-            }
-        }
-        else
-        {
-            cout<<n<<endl;
-        }
+        sc.insert(s[i]);
     }
+
+    int a[sc.size()];
+    //set<char>::iterator it;
+    for (int i = 0; i < sc.size(); i++)
+    {
+        char ch = *next(sc.begin(),i);
+        a[i]=count(s.begin(),s.end(),ch);
+    }
+    
+    for (int i = 0; i < sc.size(); i++)
+    {
+        cout<<*next(sc.begin(),i)<<" : "<<a[i]<<endl;
+    }
+    
+
     return 0;
 }

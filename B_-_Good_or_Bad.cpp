@@ -16,27 +16,33 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    int t;
+    ll t;
     cin>>t;
     while (t--)
     {
-        float n;cin>>n;
-        if (n>=38)
-        {
-            n/=5;
-            if ((ceil(n)-n)<0.6)
+        string s;
+        cin>>s;
+        int cnt=0;
+        if(s.length()>=3){
+            for (ll i = 0; i < s.length(); i++)
             {
-                cout<<5*round(n)<<endl;
+               if ("101"==s.substr(i,3)||"010"==s.substr(i,3)){
+                cnt++;break;
+               }
+            //    else
+            //    {
+            //     s.erase(0,1);
+            //    }
             }
-            else
+
+
+            if (cnt)
             {
-                cout<<round(5*n)<<endl;
+                cout<<"Good"<<endl;
             }
+            else cout<<"Bad"<<endl;
         }
-        else
-        {
-            cout<<n<<endl;
-        }
+        else cout<<"Bad"<<endl;
     }
     return 0;
 }

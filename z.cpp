@@ -1,9 +1,22 @@
+// Parvez Ali, ICE-13 of PUST
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
 
-long long arr[5];
-for(long long &x:arr){cin>>x;}
-for(long long &y:arr){cout<<y<<" ";}
-return 0;
+typedef long long ll;
+typedef unsigned long long ull;
+typedef vector<int> vint;
+typedef vector<ll> vll;
+typedef vector<char> vchar;
+typedef vector<string> vstr;
+#define endl '\n'
+#define mod (1e9+7)
+void Y(){cout<<"YES"<<endl;}
+void N(){cout<<"NO"<<endl;}
+void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
+
+int main(){
+    IOS();
+    ll a,b; cin>>a>>b;
+    cout<<(a & b)<<endl;
+    return 0;
 }

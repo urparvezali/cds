@@ -16,27 +16,27 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    int t;
-    cin>>t;
+    ll t;cin>>t;
     while (t--)
     {
-        float n;cin>>n;
-        if (n>=38)
+        ll n; cin>>n; vll v;
+        for (int i = 0; i < n; i++)
         {
-            n/=5;
-            if ((ceil(n)-n)<0.6)
+            int tmp; cin>>tmp; v.push_back(tmp);
+        }
+        sort(v.begin(),v.end());
+        reverse(v.begin(),v.end());
+
+        for (int i = n-1; i >= 1; i--)
+        {
+            if (abs(v[i]-v[i-1])<=1)
             {
-                cout<<5*round(n)<<endl;
-            }
-            else
-            {
-                cout<<round(5*n)<<endl;
+                v.pop_back();
             }
         }
-        else
-        {
-            cout<<n<<endl;
-        }
+
+        v.size()<=1? Y(): N();
     }
+    
     return 0;
 }

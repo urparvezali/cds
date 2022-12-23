@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.rs": "rust",
+        "numeric": "cpp",
+        "cmath": "cpp",
+        "iostream": "cpp"
+    }
+}

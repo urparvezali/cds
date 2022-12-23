@@ -16,27 +16,30 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    int t;
-    cin>>t;
-    while (t--)
+    int n;
+    cin>>n;
+    int a[n][n];
+    for (int i = 0; i < n; i++)
     {
-        float n;cin>>n;
-        if (n>=38)
+        for (int j = 0; j < n; j++)
         {
-            n/=5;
-            if ((ceil(n)-n)<0.6)
-            {
-                cout<<5*round(n)<<endl;
-            }
-            else
-            {
-                cout<<round(5*n)<<endl;
-            }
-        }
-        else
-        {
-            cout<<n<<endl;
+            cin>>a[i][j];
         }
     }
+    int sum=0,sum1=0,sum2=0;
+    for(int i=0;i<n;i++){
+        for(int j=0; j<n; j++){
+            cin>>a[i][j];
+        
+        if(i==j){
+            sum1+=a[i][j];
+        }
+        if(i==n-j-1){
+            sum2+=a[i][j];
+        }
+    }
+    }
+    sum = abs(sum1-sum2);
+    cout<<sum<<endl;
     return 0;
 }

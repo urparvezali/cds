@@ -16,27 +16,17 @@ void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL);}
 
 int main(){
     IOS();
-    int t;
-    cin>>t;
-    while (t--)
+    ll n;
+    cin>>n;
+    float x;
+    x = (log(n)/log(2));
+    int y = x;
+    if (y-x==0)
     {
-        float n;cin>>n;
-        if (n>=38)
-        {
-            n/=5;
-            if ((ceil(n)-n)<0.6)
-            {
-                cout<<5*round(n)<<endl;
-            }
-            else
-            {
-                cout<<round(5*n)<<endl;
-            }
-        }
-        else
-        {
-            cout<<n<<endl;
-        }
+        Y();
     }
+    else N();
+    // solution by bitwise operation
+    // (n&(n-1)==0)? Y(): N();
     return 0;
 }
