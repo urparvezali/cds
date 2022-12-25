@@ -10,7 +10,7 @@ typedef vector<char> vchar;
 typedef vector<string> vstr;
 #define endl '\n'
 void Y(){cout<<"YES"<<endl;}
-void N(){cout<<"NO"<<endl;} 
+void N(){cout<<"NO"<<endl;}
 void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 const ll mod = 1e9+7;
 
@@ -23,7 +23,22 @@ bool palin(string s){ll i=0;ll j=s.length()-1;while(i<=j){if(s[i]!=s[j])return f
 
 void solution()
 {
+    ll n; cin>>n; ll v[n];
+    for (ll i = 0; i < n; i++)
+    {
+        cin>>v[i];
+    }
     
+    ll q; cin>>q;
+
+    while (q--)
+    {
+        int t,k,x;
+        cin>>t;
+        t==1? cin>>k>>x: cin>>k;
+        if(t==1) v[k-1]=x;
+        if(t==2) cout<<v[k-1]<<endl;
+    }
 }
 
 
