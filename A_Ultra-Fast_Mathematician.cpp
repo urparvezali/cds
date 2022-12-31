@@ -10,7 +10,7 @@ typedef vector<char> vchar;
 typedef vector<string> vstr;
 #define endl '\n'
 void Y(){cout<<"YES"<<endl;}
-void N(){cout<<"NO"<<endl;} 
+void N(){cout<<"NO"<<endl;}
 void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 const ll mod = 1e9+7;
 
@@ -20,35 +20,39 @@ ll lllen(ll n){ll res=0;while(n!=0){res++;n/=10;}return res;}
 ll binExp(ll a,ll b){ll ans=1;while(b){if(b&1)ans=(ans*a)%mod;a=(a*a)%mod;b>>=1;}return ans;}
 bool palin(string s){ll i=0;ll j=s.length()-1;while(i<=j){if(s[i]!=s[j])return false;i++;j--;}return true;}
 
-ll todec(string s)
-{
-    ll r;
-    s[s.length()-1]=='0'? r=0: r=1;
-    ll j=1;
-    for (ll i = 1; i < s.length()-1; i++)
-    {
-        if(s[i]=='1') r+=pow(2,j);
-        j*=2;
+int binary_to_decimal(string binary) {
+    int num = 0;
+    for (int i = 0; i < binary.length(); i++) {
+        if (binary[i] == '1') {
+            num += pow(2, binary.length() - i - 1);
+        }
     }
-    return r;
+    return num;
 }
-ll tobin(ll d)
-{
-    string s; s = to_string(d);
-    for (ll i = 0; i < count; i++)
-    {
-        /* code */
+string decimal_to_binary(int num) {
+    if (num == 0) {
+        return "0";
     }
-    
+    string binary = "";
+    while (num > 0) {
+        binary = to_string(num % 2) + binary;
+        num = num / 2;
+    }
+    return binary;
 }
+
 void solution()
 {
-    string s, ss; cin>>s>>ss;
-    ll sd,ssd;
-    ll de = todec(s)+todec(ss);
-
-    cout<<tobin(de)<<endl;
-
+   string s,ss; cin>>s>>ss;
+   ll x,y; x=binary_to_decimal(s); y=binary_to_decimal(ss);
+   ll z = (x xor y);
+   string sss = decimal_to_binary(z);
+   while (sss.length()<s.length())
+   {
+    sss='0'+sss;
+   }
+   
+   cout<<sss<<endl; 
 }
 
 

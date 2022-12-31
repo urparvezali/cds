@@ -19,29 +19,22 @@ ll clcm(ll a,ll b){return a/cgcd(a,b)*b;}
 ll lllen(ll n){ll res=0;while(n!=0){res++;n/=10;}return res;}
 ll binExp(ll a,ll b){ll ans=1;while(b){if(b&1)ans=(ans*a)%mod;a=(a*a)%mod;b>>=1;}return ans;}
 bool palin(string s){ll i=0;ll j=s.length()-1;while(i<=j){if(s[i]!=s[j])return false;i++;j--;}return true;}
-
+ll decimal_to_binary(int num) {
+    if (num == 0) {
+        return "0";
+    }
+    string binary = "";
+    while (num > 0) {
+        binary = to_string(num % 2) + binary;
+        num = num / 2;
+    }
+    ll bin = stoi(binary);
+    return bin;
+}
 
 void solution()
 {
-    ll n,k; cin>>n>>k;
-    deque<ll> na(n);
-    deque<ll> ka(n-k+1);
-    for (ll i = 0; i < n; i++)
-    {
-        na[i]=i+1;
-    }
-    int j=0;
-    for (ll i = 0; i < n-k+1; i++)
-    {
-        ka[i]= max({na[j],na[j+1],na[j+2]}) + min({na[j],na[j+1],na[j+2]});
-        j++;
-    }
-    for (ll i = 0; i < ka.size(); i++)
-    {
-        cout<<ka[i]<<" ";
-    }
-    cout<<endl;
-    
+
 }
 
 
