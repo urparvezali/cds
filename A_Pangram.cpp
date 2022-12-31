@@ -17,7 +17,16 @@ const ll mod = 1e9+7;
 
 void solution()
 {
-    
+    ll n; cin>>n; string s; cin>>s;
+    set <char> ss;
+    for (ll i = 0; i < n; i++)
+    {
+        if(isupper(s[i])) s[i]=s[i]+32;
+
+        ss.insert(s[i]);
+    }
+    ss.size()==26? Y():N();
+
 }
 
 

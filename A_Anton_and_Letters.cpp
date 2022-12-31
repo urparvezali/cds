@@ -17,7 +17,14 @@ const ll mod = 1e9+7;
 
 void solution()
 {
-    
+    string s; getline(cin,s);
+    s.erase(0,1); s.erase(s.length()-1,1);
+    set<char>ss;
+    for (ll i = 0; i < s.length(); i+=3)
+    {
+        ss.insert(s[i]);
+    }
+    cout<<ss.size()<<endl;
 }
 
 

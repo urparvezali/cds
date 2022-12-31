@@ -17,7 +17,24 @@ const ll mod = 1e9+7;
 
 void solution()
 {
-    
+    ll n; cin>>n; ll a[n],b[n];
+    for (ll i = 0; i < n; i++)
+    {
+        cin>>a[i]>>b[i];
+    }
+    ll c=0;
+    for (ll i = 0; i < n; i++)
+    {
+        for (ll j = 0; j < n; j++)
+        {
+            if (a[i]==b[j])
+            {
+                c++;
+            }
+            
+        }
+    }
+    cout<<c<<endl;
 }
 
 

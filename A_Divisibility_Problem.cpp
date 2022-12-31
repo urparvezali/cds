@@ -17,6 +17,17 @@ const ll mod = 1e9+7;
 
 void solution()
 {
+    double a,b; cin>>a>>b;
+    ll c=a/b;
+    if ((a/b)-c==0)
+    {
+        cout<<0<<endl;
+    }
+    else
+    {
+        ll d = abs(b*(ceil(a/b))-a);
+        cout<<d<<endl;
+    }
     
 }
 
@@ -25,7 +36,7 @@ int main()
 {
     IOS();
     ll tc; tc=1;
-    // cin>>tc;
+    cin>>tc;
     while(tc--)
         solution();
     return 0;
