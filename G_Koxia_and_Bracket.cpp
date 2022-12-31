@@ -23,9 +23,29 @@ bool palin(string s){ll i=0;ll j=s.length()-1;while(i<=j){if(s[i]!=s[j])return f
 
 void solution()
 {
-    
+    string s; cin>>s; deque<char> d;
+    // for (ll i = 0; i < s.length(); i++)
+    // {
+    //     d.push_back(s[i]);
+    // }
+    if (s.length()==1)
+    {
+        cout<<1<<endl;
+    }
+    else
+    {
+        ll sum=0;
+        for (ll i = 0; i < s.length()/2; i++)
+        {
+            if (s[i]=='('&&s[s.length()-i-1]==')')
+            {
+                continue;
+            }
+            else sum+=2;
+        }
+        cout<<sum<<endl;
+    }
 }
-
 
 int main()
 {

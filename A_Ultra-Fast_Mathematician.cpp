@@ -3,53 +3,61 @@
 using namespace std;
 
 typedef long long ll;
+typedef unsigned long long ull;
 typedef vector<int> vint;
-typedef vector<string> vstr;
 typedef vector<ll> vll;
-#define endl "\n"
-#define IOS ios_base::sync_with_stdio(false);cin.tie(NULL)
+typedef vector<char> vchar;
+typedef vector<string> vstr;
+#define endl '\n'
+void Y(){cout<<"YES"<<endl;}
+void N(){cout<<"NO"<<endl;} 
+void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
+const ll mod = 1e9+7;
 
-int main(){
-    IOS;
-    string s,ss;
-    cin>>s>>ss;
-    ll a= stoi(s);
-    ll b= stoi(ss);
-    ll d1=0,d2=0;
-    for (int i = 0; i < s.length(); i++)
-    {
-        d1=d1+(a%10)*pow(2,i);
-        a=a/10;
-        d2=d2+(b%10)*pow(2,i);
-        b=b/10;
-    }
-    ll d=abs(d1-d2); vector<char> st;
-    for (int i = 0; i < s.length(); i++)
-    {
-        if (d == 0)
-        {
-            st.push_back('0');
-        }
-        else if (d==1)
-        {
-            st.push_back('1');
-        }
-        else if (d%2==1)
-        {
-            st.push_back('0');
-        }
-        else if (d%2==0)
-        {
-            st.push_back('1');
-        }
-        d=d/2;
-    }
-    ll l= st.size();
-    for (int i = 0; i < l; i++)
-    {
-        cout<<st.back();
-        st.pop_back();
-    }
+ll cgcd(ll a,ll b){if(b==0)return a;else return cgcd(b,a%b);}
+ll clcm(ll a,ll b){return a/cgcd(a,b)*b;}
+ll lllen(ll n){ll res=0;while(n!=0){res++;n/=10;}return res;}
+ll binExp(ll a,ll b){ll ans=1;while(b){if(b&1)ans=(ans*a)%mod;a=(a*a)%mod;b>>=1;}return ans;}
+bool palin(string s){ll i=0;ll j=s.length()-1;while(i<=j){if(s[i]!=s[j])return false;i++;j--;}return true;}
 
+ll todec(string s)
+{
+    ll r;
+    s[s.length()-1]=='0'? r=0: r=1;
+    ll j=1;
+    for (ll i = 1; i < s.length()-1; i++)
+    {
+        if(s[i]=='1') r+=pow(2,j);
+        j*=2;
+    }
+    return r;
+}
+ll tobin(ll d)
+{
+    string s; s = to_string(d);
+    for (ll i = 0; i < count; i++)
+    {
+        /* code */
+    }
+    
+}
+void solution()
+{
+    string s, ss; cin>>s>>ss;
+    ll sd,ssd;
+    ll de = todec(s)+todec(ss);
+
+    cout<<tobin(de)<<endl;
+
+}
+
+
+int main()
+{
+    IOS();
+    ll tc; tc=1;
+    // cin>>tc;
+    while(tc--)
+        solution();
     return 0;
 }

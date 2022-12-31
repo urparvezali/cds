@@ -23,6 +23,24 @@ bool palin(string s){ll i=0;ll j=s.length()-1;while(i<=j){if(s[i]!=s[j])return f
 
 void solution()
 {
+    ll n,k; cin>>n>>k;
+    deque<ll> na(n);
+    deque<ll> ka(n-k+1);
+    for (ll i = 0; i < n; i++)
+    {
+        na[i]=i+1;
+    }
+    int j=0;
+    for (ll i = 0; i < n-k+1; i++)
+    {
+        ka[i]= max({na[j],na[j+1],na[j+2]}) + min({na[j],na[j+1],na[j+2]});
+        j++;
+    }
+    for (ll i = 0; i < ka.size(); i++)
+    {
+        cout<<ka[i]<<" ";
+    }
+    cout<<endl;
     
 }
 
@@ -31,7 +49,7 @@ int main()
 {
     IOS();
     ll tc; tc=1;
-    // cin>>tc;
+    cin>>tc;
     while(tc--)
         solution();
     return 0;
