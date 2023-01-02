@@ -17,6 +17,20 @@ const ll mod = 1e9+7;
 
 void solution()
 {
+    ll n; cin>>n;
+    string s; cin>>s;
+    for (ll i = 0; i < n; i++)
+    {
+        for (ll j = i+2; j < n; j++)
+        {
+            if (s.substr(i,2)==s.substr(j,2))
+            {
+                Y();
+                return;
+            }
+        }
+    }  
+    N();
 }
 
 
@@ -24,7 +38,7 @@ int main()
 {
     IOS();
     ll tc; tc=1;
-    // cin>>tc;
+    cin>>tc;
     while(tc--)
         solution();
     return 0;

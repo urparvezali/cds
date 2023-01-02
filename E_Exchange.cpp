@@ -17,6 +17,8 @@ const ll mod = 1e9+7;
 
 void solution()
 {
+    double n,a,b; cin>>n>>a>>b;
+    a>b? cout<<1<<endl: cout<<(long long)ceil(n/a)<<endl;
 }
 
 
@@ -24,7 +26,7 @@ int main()
 {
     IOS();
     ll tc; tc=1;
-    // cin>>tc;
+    cin>>tc;
     while(tc--)
         solution();
     return 0;
