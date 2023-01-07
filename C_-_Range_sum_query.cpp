@@ -14,25 +14,38 @@ void N(){cout<<"NO"<<endl;}
 void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 const ll mod = 1e9+7;
 
-ll fib(ll n)
-{
-    if(n<=1) return n;
-    return (fib(n-1)+fib(n-2));
-}
-ll su(ll n)
-{
-    if(n==0) return 0;
-    return n+su(n-1);
-}
-ll ogcd(ll a,ll b)
-{
-    if(a==0) return b;
-    return ogcd(a%b,b);
-}
+
 void solution()
 {
-    cout<<ogcd(100,8);
-} 
+    ll n,q; cin>>n>>q;
+    vll v(n);
+    for(auto &x: v) cin>>x;
+
+    vector<vector<ll>> a;
+    for (ll i = 0; i < q; i++)
+    {
+        vll vn(2);
+        for (ll j = 0; j < 2; j++)
+        {
+            cin>>vn[j];
+        }
+        a.push_back(vn);
+    }
+
+    vll sum(q);
+    for(auto &z: sum) z=0;
+
+    for (ll i = 0; i < q; i++)
+    {
+        for (ll j = a[i][0]-1; j < a[i][1]; j++)
+        {
+            sum[i]+=v[j];
+        }
+        cout<<sum[i]<<endl;
+    }
+    
+}
+
 
 int main()
 {

@@ -14,31 +14,24 @@ void N(){cout<<"NO"<<endl;}
 void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 const ll mod = 1e9+7;
 
-ll fib(ll n)
-{
-    if(n<=1) return n;
-    return (fib(n-1)+fib(n-2));
-}
-ll su(ll n)
-{
-    if(n==0) return 0;
-    return n+su(n-1);
-}
-ll ogcd(ll a,ll b)
-{
-    if(a==0) return b;
-    return ogcd(a%b,b);
-}
+
 void solution()
 {
-    cout<<ogcd(100,8);
-} 
+    ll n; cin>>n; vll v(n);
+    for(auto &x:v)
+        cin>>x;
+    set<ll> s;
+    for(auto &y:v)
+        s.insert(y);
+    s.size()!=2?cout<<n<<endl: cout<<n/2+1<<endl;
+}
+
 
 int main()
 {
     IOS();
     ll tc; tc=1;
-    // cin>>tc;
+    cin>>tc;
     while(tc--)
         solution();
     return 0;

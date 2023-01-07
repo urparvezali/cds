@@ -1,3 +1,4 @@
+ 
 // Parvez Ali, ICE-13 of PUST
 #include <bits/stdc++.h>
 using namespace std;
@@ -14,31 +15,44 @@ void N(){cout<<"NO"<<endl;}
 void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 const ll mod = 1e9+7;
 
-ll fib(ll n)
-{
-    if(n<=1) return n;
-    return (fib(n-1)+fib(n-2));
-}
-ll su(ll n)
-{
-    if(n==0) return 0;
-    return n+su(n-1);
-}
-ll ogcd(ll a,ll b)
-{
-    if(a==0) return b;
-    return ogcd(a%b,b);
-}
+
 void solution()
 {
-    cout<<ogcd(100,8);
-} 
+    ll n; cin>>n;
+    string s; cin>>s;
+    ll r=0,l=0;
+    for (ll i = 0; i < s.length(); i++)
+    {
+        s[i]=='L'? l++:r++;
+        if(l>1&&r>1)
+            break;
+        
+    }
+        if (s=="R")
+        {
+            cout<<-1<<endl;
+        }
+        
+        else if (l>0&&r>0)
+        {
+            cout<<1<<endl;
+            return;
+        }
+        else{
+
+            cout<<-1<<endl;
+            return;
+        }
+    
+    
+}
+
 
 int main()
 {
     IOS();
     ll tc; tc=1;
-    // cin>>tc;
+    cin>>tc;
     while(tc--)
         solution();
     return 0;
