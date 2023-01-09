@@ -1,4 +1,5 @@
-// PUST_Phantom, ICE-13 of PUST
+ 
+// Parvez Ali, ICE-13 of PUST
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -14,32 +15,34 @@ void N(){cout<<"NO"<<endl;}
 void IOS(){ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);}
 const ll mod = 1e9+7;
 
-
-void solution()
+ll bin_to_dec(std::string s)
 {
-    ll n, c = 0, mx = -1, sum = 0, k, s = 0, e = 0;
-    cin >> n >> k;
-    vll a, p;
-    for (ll i = 1; i <= n; i++)
+    ll dec = 0;
+    for (ll i = 0; i < s.size(); ++i)
     {
-        int x;
-        cin >> x;
-        sum += x;
-        a.push_back(x);
-        p.push_back(sum);
-    }
-    for (ll i = 1; i <= n; i++)
-    {
-        c = p[i + k] - p[i];
-        if (c > mx)
+        if (s[i] == '1')
         {
-            s = i;
-            e = i + k - 1;
-            mx = c;
+            dec += 1 << (s.size() - 1 - i);
         }
     }
-    cout << s << " " << e << endl;
+    return dec;
 }
+void solution()
+{
+    ll n; cin>>n;
+
+    vchar v(n); for(auto &x: v) cin>>x;
+
+    string s;
+
+    for (ll i = 0; i < v.size(); i++)
+    {
+        s+=v[i];
+    }
+
+    cout<<bin_to_dec(s)<<endl;
+}
+
 
 int main()
 {
